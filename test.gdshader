@@ -2,10 +2,12 @@ shader_type canvas_item;
 
 uniform sampler2D image;
 
-uniform vec4[1] colors : source_color;
-
-void fragment() {
+void fragment()
+{
 	vec4 pixel = texture(image, UV);
+
+	// This line causes the problem
 	vec4[1] pixels = {pixel};
-	COLOR = pixels[0] * colors[0];
+
+	COLOR = pixels[0];
 }

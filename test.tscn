@@ -1,34 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://u4htbt0baf6k"]
+[gd_scene load_steps=5 format=3 uid="uid://u4htbt0baf6k"]
 
 [ext_resource type="Shader" path="res://test.gdshader" id="1_u3ehw"]
 [ext_resource type="Texture2D" uid="uid://c8s6by6sy6sds" path="res://icon.svg" id="2_108u4"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0c1nj"]
-viewport_path = NodePath("SubViewport")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2edr"]
 resource_local_to_scene = true
 shader = ExtResource("1_u3ehw")
-shader_parameter/colors = PackedColorArray(0, 1, 0, 1)
-shader_parameter/image = SubResource("ViewportTexture_0c1nj")
+shader_parameter/image = ExtResource("2_108u4")
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gswio"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7tket"]
 
-[node name="TextureRect" type="TextureRect"]
-material = SubResource("ShaderMaterial_c2edr")
+[node name="HBoxContainer" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_gswio")
 
-[node name="SubViewport" type="SubViewport" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="SubViewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
 texture = ExtResource("2_108u4")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_c2edr")
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("PlaceholderTexture2D_7tket")
