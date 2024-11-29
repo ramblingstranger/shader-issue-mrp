@@ -6,5 +6,6 @@ uniform vec4[1] colors : source_color;
 
 void fragment() {
 	vec4 pixel = texture(image, UV);
-	COLOR = pixel * colors[0];
+	vec4[1] pixels = {pixel};
+	COLOR = pixels[0] * colors[0];
 }

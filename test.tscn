@@ -9,7 +9,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2edr"]
 resource_local_to_scene = true
 shader = ExtResource("1_u3ehw")
-shader_parameter/colors = PackedColorArray(1, 0, 0, 1)
+shader_parameter/colors = PackedColorArray(0, 1, 0, 1)
 shader_parameter/image = SubResource("ViewportTexture_0c1nj")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gswio"]
